@@ -80,3 +80,8 @@ DEFAULT_LOGGING = {
 logging.config.dictConfig(DEFAULT_LOGGING)
 logging.info('Example')
 ```
+
+## Resources
+
+- [Logging Docs](https://docs.python.org/3/library/logging.html)
+- [Logging Official Cookbook](https://docs.python.org/3/howto/logging-cookbook.html)
