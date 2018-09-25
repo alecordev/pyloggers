@@ -1,5 +1,17 @@
 # Logging Examples
 
+## Simplest logger
+
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(asctime)s] - %(message)s', # optional
+                    filename='filename.log') # optional
+```
+
+## Simple logger setup
+
 ```python
 def setup_logger():
     """ Setups the logging functionality used throughout the execution. """
