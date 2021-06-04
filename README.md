@@ -10,6 +10,21 @@ logging.basicConfig(level=logging.DEBUG,
                     filename='filename.log') # optional
 ```
 
+## Simple multiprocessing logger
+
+```python
+import os
+import logging
+
+
+logging.basicConfig(
+    # stream=sys.stdout,
+    filename=f"load_testing_amp-{os.getpid()}.log",  # each process in a pool must have its own
+    level=logging.DEBUG,
+    format="[%(asctime)s] - PID: %(process)d - TID: %(thread)d - %(levelname)s - %(message)s",
+)
+```
+
 ## Simple logger setup
 
 ```python
@@ -32,6 +47,12 @@ logger = setup_logger()
 ```python
 from impala.dbapi import connect
 logging.getLogger('impala.hiveserver2').setLevel(logging.INFO)
+```
+
+```python
+requests.packages.urllib3.disable_warnings()
+logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("urllib3").setLevel(logging.WARNING)
 ```
 
 ## dictConfig
