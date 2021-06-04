@@ -19,7 +19,7 @@ import logging
 
 logging.basicConfig(
     # stream=sys.stdout,
-    filename=f"load_testing_amp-{os.getpid()}.log",  # each process in a pool must have its own
+    filename=f"load_testing_log-{os.getpid()}.log",  # each process in a pool must have its own
     level=logging.DEBUG,
     format="[%(asctime)s] - PID: %(process)d - TID: %(thread)d - %(levelname)s - %(message)s",
 )
